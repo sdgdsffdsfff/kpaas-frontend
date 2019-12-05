@@ -16,3 +16,11 @@ export async function getNamespaceMetrics() {
 export async function getDashboardMonitor() {
   return request('/monitor/metrics');
 }
+
+export async function getProjectMetrics(params) {
+  return request(`/project/${params.ns}/monitor/${params.name}`);
+}
+
+export async function getProjectAlerts(params) {
+  return request(`/project/${params.ns}/alerts/${params.name}`);
+}
